@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>SJ Neighborhood Association Map</title>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.js'></script>
+  <link href='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.css' rel='stylesheet' />
+  <script src="http://d3js.org/d3.v3.min.js"></script>
+  <script src="http://d3js.org/queue.v1.min.js"></script>
+
+  <style>
+    body { margin:0; position:fixed; top:0; right:0; bottom:0; left:0; }
+    #map { position:absolute; top:0; bottom:0; width:100%; }
+    #menu { position:fixed; z-index:1; bottom:0; right:0;
+            width:10em; height:10em; background-color:white;
+            border-radius: 2%; border:rgba(100,100,100,.75) solid 1px;
+            display:inline-block; line-height:1.5em;
+            margin:0 3em 5em 0; padding:.5em;}
+
+  </style>
+
+</head>
+
+<body>
+
+<div id='map'></div>
+
+<script type="text/javascript">
+L.mapbox.accessToken = 'pk.eyJ1IjoiaWZlYXJjb21waWxlcmVycm9ycyIsImEiOiJjaXR6MXEwbHYwYjVnMnludnBuOGY0ZzNpIn0.Uhem8gvmgHnOhV55zvuYOQ';
+// Create a map in the div #map
+var map = L.mapbox.map('map', 'mapbox.streets').setView([37.3,-121.9], 11);
+
+var popup = new L.Popup({ autoPan: false });
+
+$.getJSON("Neighborhood_Organizations_region.geojson", function(data, error) {
+  if(error != "success") console.log(error);
+
+
+  var geojson = L.geoJson(data, {
+    style: getStyle,
+    onEachFeature: onEachFeature
+  }).addTo(map);
+  
+
+  function getStyle(feature) {
+    return {
+      fillColor: 'blue',
+      opacity: 0.65,
+      weight: 2
+    }
+  }
+
+  function onEachFeature(feature, layer) {
+    layer.on({
+      mousemove: mousemove,
+      mouseout: mouseout,
+      click: zoomToFeature,
+    });
+  }
+
+  var closeTooltip;
+
+  function mousemove(e) {
+    var layer = e.target;
+    var titles = ["<div class='marker-title'>", "Person: ", "Person Phone: ", "Contact: ", "Contact Phone: ", "Address: ", "City: ", "Zip: "]
+    var features = [layer.feature.properties.ORG, layer.feature.properties.PERSON, layer.feature.properties.PHONE, layer.feature.properties.CONTACT, layer.feature.properties.PHONE0, layer.feature.properties.ADDRESS, layer.feature.properties.CITY, layer.feature.properties.ZIP]
+    var display = [];
+    var content = "";
+
+    console.log(features);
+    console.log(features.length);
+
+    for(var i = 0; i < features.length; i++) {
+      if(features[i] != null) {
+        content = titles[i] + features[i];
+        if(i == 0)
+          display.push(content+"</div>");
+        else
+          display.push(content+"<br>");
+      }
+    }
+
+    content = "";
+
+    for(var i = 0; i < display.length; i++) {
+      content += display[i];
+    }
+
+    popup.setLatLng(e.latlng);
+    popup.setContent(content);
+
+    if (!popup._map) popup.openOn(map);
+      window.clearTimeout(closeTooltip);
+
+    // highlight feature
+    layer.setStyle({
+      weight: 3,
+      opacity: 0.3,
+      fillOpacity: 0.9
+    });
+
+    if (!L.Browser.ie && !L.Browser.opera) {
+      layer.bringToFront();
+    }
+  }
+
+  function mouseout(e) {
+    geojson.resetStyle(e.target);
+    closeTooltip = window.setTimeout(function() {
+      map.closePopup();
+    }, 100);
+  }
+
+  function zoomToFeature(e) {
+    map.fitBounds(e.target.getBounds());
+  }
+
+});
+</script>
+
+</body>
+</html>
