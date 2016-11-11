@@ -70,6 +70,8 @@ $.getJSON("js/Neighborhood_Organizations_region.geojson", function(data, error) 
   }
 });
 
+
+
 var neighborhoods = [
 	{
 		city: "Alviso",
@@ -103,7 +105,15 @@ var neighborhoods = [
 
 ];
 
+function toggleMobileMenu(){
+  var menu = document.getElementById('mobileMenu');
+  menu.style.display = "inline";
+}
 
+function closeMenu(){
+  var menu = document.getElementById('mobileMenu');
+  menu.style.display = "none";
+}
 function rightSideEvent(arr){
 	// clear 
 	$("#city").text(arr.city);
