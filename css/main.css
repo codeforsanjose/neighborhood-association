@@ -1,0 +1,311 @@
+body{
+	margin: 0 auto;
+	font-family: 'Lato', sans-serif;
+	background: url('https://puu.sh/rWL8c/24393ba30d.png') repeat-y right 0px;
+	background-color: #F0F0F0;
+}
+#header{
+	background-color:#333E4B;
+	width:100%;
+	height:85px;
+
+}
+
+#logo{
+	float:left;
+	text-align: center;
+	color:white;
+	background-color: #FFB200;
+	height:85px;
+	width:200px;
+}
+
+#logo > #desktopLogo >h1{
+	color:white;
+	font-family: arial;
+	font-size: 18px;
+	line-height: 50px;
+}
+
+#logo > #mobileLogo {
+	display:none;
+}
+
+#mobileLogo:hover{
+	cursor:hand;
+}
+
+#mobileL{
+	font-size:30px;
+	line-height: 70px;
+}
+
+#searchbar{
+	float:left;
+	padding: 25px;
+	padding-bottom:0px;
+}
+
+#searchIcon{
+	color: #C0C2C5;
+	position: absolute;
+	top:38px;
+	left:235px;
+}
+
+#search{
+	background: #2C343E;
+	padding:10px;
+	padding-left:30px;
+	font-size: 14px;
+	font-style: italic;
+	font-weight: 300;
+	color: #848484;
+	height:40px;
+	width: 300px;
+	border:0px;
+	border-radius: 5px;
+}
+
+#nav{
+	float:right;
+	display: flex;
+	flex-direction: row;
+	display: -webkit-flex;
+	-webkit-justify-content: space-around;
+	justify-content: space-around;
+	background-color: #29313C;
+	height:85px;
+	width:350px;
+	line-height: 90px;
+
+}
+
+.navLinks a{
+	color:white;
+	font-size: 12px;
+	color: #BABABA;
+
+}
+
+#map{
+	float: left;
+	background-color: #29313C;
+	width:calc(100% - 350px);
+	height:400px;
+	margin-bottom: 40px
+}
+
+
+
+
+
+#menu { 	
+	position:fixed; z-index:1; bottom:0; right:0;
+    width:10em; height:10em; background-color:white;
+            border-radius: 2%; 
+            border:rgba(100,100,100,.75) solid 1px;
+            display:inline-block; 
+            line-height:1.5em;
+            margin:0 3em 5em 0; 
+            padding:.5em;
+}
+
+
+#rightSide{
+	background-color: white;
+	width:350px;
+	height:100%;
+	float: right;
+}
+
+.socialMedia > ul{
+	list-style: none;
+	padding: 0px;
+}
+
+.neighborhood{
+	padding: 10px 50px 0px 50px;
+}
+
+
+.neighborhood > h3{
+	text-align: center;
+	font-size: 20px;
+	color: #41BCEF;
+	line-height: 50px;
+}
+
+.neighborhood > .description{
+	font-weight: 300;
+	font-size: 14px;
+	color: #616161;
+	line-height: 24px;
+	margin-bottom:20px;
+}
+
+.neighborhood > h4{
+	font-size: 16px;
+	color: #4F5B6B;
+	line-height: 19px;
+	margin-top: 20px;
+}
+
+.neighborhood > p{
+	font-weight: 300;
+	font-size: 12px;
+	color: #686868;
+	line-height: 15px;
+}
+
+#thing1{
+	text-align: center;
+	margin-top:30px;
+}
+
+.neighborhood > #thing1 > .websiteButton{
+	height:40px;
+	width:200px;
+	text-align: center; 
+	background: #41BCEF;
+	border:0px;
+	border-radius: 5px;
+	font-size: 12px;
+	color: #FFFFFF;
+	line-height: 15px;
+}
+
+#neighborhoodList{
+	padding:40px;
+}
+
+#neighborhoodList > h3{
+	float:none;
+	margin:0px;
+	font-size: 18px;
+	color: #676767;
+	line-height: 22px;
+
+}
+
+#neighborhoodList > .list {
+	margin-top:20px;
+}
+
+.neighborhoodAll{
+	width:calc(100% - 350px);
+	height:100px;
+	background-color: white;
+	padding:25px;
+	display: -webkit-flex;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	-webkit-justify-content: space-between;
+	background: #FFFFFF;
+	box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.07);
+	border-radius: 5px;
+}
+
+.neighborhoodAll:hover{
+	background-color: #F8F8F8;
+	cursor:hand;
+}
+
+.neighborhoodAll > .lowDown{
+	width:300px;
+}
+
+.lowDown > h4 {
+
+	font-size: 16px;
+	color: #41BCEF;
+	line-height: 5px;
+}
+
+.lowDown > p {
+	font-size: 13px;
+	font-weight: 300;
+	color: #838383;
+	line-height: 25px;
+}
+
+.socialMedia{
+	padding-top:10px;
+}
+.socialMedia > ul{
+	list-style: none;
+}
+
+.locationBox{
+	width:250px;
+	margin: 0px;
+	height:100%;
+}
+
+.locationBox > h5{
+	font-size: 14px;
+	color: #4F5B6B;
+	line-height: 12px;
+}
+
+.locationBox > p{
+	font-size: 12px;
+	color: #6D6D6D;
+	line-height: 11px;
+	padding-right: 20px;
+
+}
+
+@media only screen and (max-width: 900px) {
+    body {
+        background:url();
+    }
+
+    #rightSide, #nav{
+    	display:none;
+    }
+
+    #map{
+    	width:100%;
+    }
+
+    #logo > #desktopLogo{
+    	display:none;
+    }
+
+    #logo{
+    	width:75px;
+    }
+    #logo > #mobileLogo{
+
+		display:block;
+	}
+
+    #searchIcon{
+		color: #C0C2C5;
+		position: absolute;
+		top:28px;
+		left:100px;
+	}	
+
+ 	#searchBar{
+ 		padding: 15px;
+ 	}
+
+    #header, #logo{
+    	height:70px;
+    }
+
+    #search{
+    	width:200px;
+    }
+
+    .neighborhoodAll{
+    	width:100%;
+    }
+
+
+}
+}
+
