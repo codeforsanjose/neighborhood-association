@@ -122,5 +122,12 @@ function rightSideEvent(arr){
 	$("#person").text(arr.person);
 	$("#phone").text(arr.phone);
 
+  var directions = document.getElementById('directions');
+  var neighborhood = document.getElementById('neighborhood');
+
+  neighborhood.style.display = "block";
+  directions.style.display = "none";
+
+
 }
 
