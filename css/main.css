@@ -277,16 +277,45 @@ ul{
 	line-height: 24px;
 	background-color: black;
 	padding:12px;
-
 	margin-bottom:5px;
 	color:white;
 }
 
 
-
 #x{
 	font-size:24px;
 	text-align: right;
+}
+
+.neighborhood{
+	display:none;
+}
+
+.directions{
+	width:100%;
+	margin: 0 auto;
+	padding:20px;
+}
+
+.directions > h2 {
+	font-family:'Lato', sans-serif;
+	font-size:20px;
+	color: gray;
+	text-align: center;
+	margin-bottom: 40px;
+}
+
+.directions > ul > li > p{
+	color:#838383;
+}
+
+.directions > ul > li{
+	margin-bottom:30px;
+}
+.direction-icons{
+	float:left;
+	margin-right:20px;
+	color: #41BCEF;
 }
 
 
