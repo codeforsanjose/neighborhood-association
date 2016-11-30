@@ -114,6 +114,7 @@ function closeMenu(){
   var menu = document.getElementById('mobileMenu');
   menu.style.display = "none";
 }
+
 function rightSideEvent(arr){
 	// clear 
 	$("#city").text(arr.city);
@@ -127,7 +128,126 @@ function rightSideEvent(arr){
 
   neighborhood.style.display = "block";
   directions.style.display = "none";
+}
 
+function loadDefaultNeighborhoods() {
+  var org = '';
+  var contact = '';
+  var phone = '';
+  var address = '';
+  var city = '';
+  var zip = '';
+  var location = '';
 
+  $.getJSON("js/Neighborhood_Organizations_region.geojson", function(data) {
+    data.features.forEach((neighborhood) => {
+      if (neighborhood.properties.ORG.charAt(0) === 'A') {
+        org = neighborhood.properties.ORG;
+        contact = neighborhood.properties.CONTACT !== null ? neighborhood.properties.CONTACT : '';
+        phone = neighborhood.properties.PHONE0 !== null ? neighborhood.properties.PHONE0 : '';
+        address = neighborhood.properties.ADDRESS;
+        city = neighborhood.properties.CITY;
+        zip = neighborhood.properties.ZIP;
+        location = address !== null ? address + ', ' + city + ', CA ' + zip : ''; 
+        console.log(org + ' ' + location);
+
+        var neighborhoodDefaultSectionDiv = document.getElementById('neighborhoodDefaultSection');
+        var neighborhoodAllDiv = document.createElement('div');
+        neighborhoodAllDiv.className = 'neighborhoodAll';
+
+        var lowDownDiv = document.createElement('span');
+        lowDownDiv.className = 'lowDown';
+
+        var neighborhoodTitle = document.createElement('h4');
+        var neighborhoodTitleText = document.createTextNode(org);
+        neighborhoodTitle.appendChild(neighborhoodTitleText);
+
+        var contactElement = document.createElement('p');
+        var contactText = document.createTextNode('Contact: ' + contact + '    ' + phone);
+        contactElement.appendChild(contactText);
+
+        var locationBoxDiv = document.createElement('span');
+        locationBoxDiv.className = 'locationBox';
+        var locationTitle = document.createElement('h5');
+        var locationTitleText = document.createTextNode('Location:');
+        locationTitle.appendChild(locationTitleText);
+        locationBoxDiv.appendChild(locationTitle);
+        var locationDetailsElement = document.createElement('p');
+        var locationDetailsText = document.createTextNode(location);
+        locationDetailsElement.appendChild(locationDetailsText);
+        locationBoxDiv.appendChild(locationDetailsElement);
+
+        lowDownDiv.appendChild(neighborhoodTitle);
+        lowDownDiv.appendChild(contactElement);
+        neighborhoodAllDiv.appendChild(lowDownDiv);
+        neighborhoodAllDiv.appendChild(locationBoxDiv);
+        neighborhoodDefaultSectionDiv.appendChild(neighborhoodAllDiv);
+      }
+    });
+  });
+}
+function letterClickEvent(letter) {
+  var neighborhoodSectionDiv = document.getElementById('neighborhoodSection');
+  var neighborhoodDefaultSectionDiv = document.getElementById('neighborhoodDefaultSection');
+  while (neighborhoodSectionDiv.hasChildNodes()) {
+    neighborhoodSectionDiv.removeChild(neighborhoodSectionDiv.firstChild);
+  }
+  while (neighborhoodDefaultSectionDiv.hasChildNodes()) {
+    neighborhoodDefaultSectionDiv.removeChild(neighborhoodDefaultSectionDiv.firstChild);
+  }
+
+  var org = '';
+  var contact = '';
+  var phone = '';
+  var address = '';
+  var city = '';
+  var zip = '';
+  var location = '';
+
+  $.getJSON("js/Neighborhood_Organizations_region.geojson", function(data, error) {
+    data.features.forEach((neighborhood) => {
+      if (neighborhood.properties.ORG.charAt(0) === letter) {
+        org = neighborhood.properties.ORG;
+        contact = neighborhood.properties.CONTACT !== null ? neighborhood.properties.CONTACT : '';
+        phone = neighborhood.properties.PHONE0 !== null ? neighborhood.properties.PHONE0 : '';
+        address = neighborhood.properties.ADDRESS;
+        city = neighborhood.properties.CITY;
+        zip = neighborhood.properties.ZIP;
+        location = address !== null ? address + ', ' + city + ', CA ' + zip : ''; 
+        console.log(org + ' ' + location);
+
+        var neighborhoodAllDiv = document.createElement('div');
+        neighborhoodAllDiv.className = 'neighborhoodAll';
+
+        var lowDownDiv = document.createElement('span');
+        lowDownDiv.className = 'lowDown';
+
+        var neighborhoodTitle = document.createElement('h4');
+        var neighborhoodTitleText = document.createTextNode(org);
+        neighborhoodTitle.appendChild(neighborhoodTitleText);
+
+        var contactElement = document.createElement('p');
+        var contactText = document.createTextNode('Contact: ' + contact + '    ' + phone);
+        contactElement.appendChild(contactText);
+
+        var locationBoxDiv = document.createElement('span');
+        locationBoxDiv.className = 'locationBox';
+        var locationTitle = document.createElement('h5');
+        var locationTitleText = document.createTextNode('Location:');
+        locationTitle.appendChild(locationTitleText);
+        locationBoxDiv.appendChild(locationTitle);
+        var locationDetailsElement = document.createElement('p');
+        var locationDetailsText = document.createTextNode(location);
+        locationDetailsElement.appendChild(locationDetailsText);
+        locationBoxDiv.appendChild(locationDetailsElement);
+
+        lowDownDiv.appendChild(neighborhoodTitle);
+        lowDownDiv.appendChild(contactElement);
+        neighborhoodAllDiv.appendChild(lowDownDiv);
+        neighborhoodAllDiv.appendChild(locationBoxDiv);
+        neighborhoodSectionDiv.appendChild(neighborhoodAllDiv);
+      }
+    });
+  });
 }
 

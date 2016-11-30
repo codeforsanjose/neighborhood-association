@@ -17,7 +17,7 @@
 
 
 </head>
-<body>
+<body onload="loadDefaultNeighborhoods()">
 	<div id="mobileMenu">
 		<div id="x" onclick="closeMenu()">
 			Close <i class="fa fa-times" aria-hidden="true" ></i>
@@ -118,77 +118,46 @@
 
 		<div class="col-md-9" id="neighborhoodList">
 			<h3> View all neighborhoods: </h3>
-			<div>
-				<button class="btn btn-default">A</button>
-				<button class="btn btn-default">B</button>
-				<button class="btn btn-default">C</button>
-				<button class="btn btn-default">D</button>
-				<button class="btn btn-default">E</button>
-				<button class="btn btn-default">F</button>
-				<button class="btn btn-default">G</button>
-				<button class="btn btn-default">H</button>
-				<button class="btn btn-default">I</button>
-				<button class="btn btn-default">J</button>
-				<button class="btn btn-default">K</button>
-				<button class="btn btn-default">L</button>
-				<button class="btn btn-default">M</button>
-				<button class="btn btn-default">N</button>
-				<button class="btn btn-default">O</button>
-				<button class="btn btn-default">P</button>
-				<button class="btn btn-default">Q</button>
-				<button class="btn btn-default">R</button>
-				<button class="btn btn-default">S</button>
-				<button class="btn btn-default">T</button>
-				<button class="btn btn-default">U</button>
-				<button class="btn btn-default">V</button>
-				<button class="btn btn-default">W</button>
-				<button class="btn btn-default">X</button>
-				<button class="btn btn-default">Y</button>
-				<button class="btn btn-default">Z</button>
+			<div id="alphabetButtons">
+				<button class="btn btn-default" onclick="letterClickEvent('A')">A</button>
+				<button class="btn btn-default" onclick="letterClickEvent('B')">B</button>
+				<button class="btn btn-default" onclick="letterClickEvent('C')">C</button>
+				<button class="btn btn-default" onclick="letterClickEvent('D')">D</button>
+				<button class="btn btn-default" onclick="letterClickEvent('E')">E</button>
+				<button class="btn btn-default" onclick="letterClickEvent('F')">F</button>
+				<button class="btn btn-default" onclick="letterClickEvent('G')">G</button>
+				<button class="btn btn-default" onclick="letterClickEvent('H')">H</button>
+				<button class="btn btn-default" onclick="letterClickEvent('I')">I</button>
+				<button class="btn btn-default" onclick="letterClickEvent('J')">J</button>
+				<button class="btn btn-default" onclick="letterClickEvent('K')">K</button>
+				<button class="btn btn-default" onclick="letterClickEvent('L')">L</button>
+				<button class="btn btn-default" onclick="letterClickEvent('M')">M</button>
+				<button class="btn btn-default" onclick="letterClickEvent('N')">N</button>
+				<button class="btn btn-default" onclick="letterClickEvent('O')">O</button>
+				<button class="btn btn-default" onclick="letterClickEvent('P')">P</button>
+				<button class="btn btn-default" onclick="letterClickEvent('Q')">Q</button>
+				<button class="btn btn-default" onclick="letterClickEvent('R')">R</button>
+				<button class="btn btn-default" onclick="letterClickEvent('S')">S</button>
+				<button class="btn btn-default" onclick="letterClickEvent('T')">T</button>
+				<button class="btn btn-default" onclick="letterClickEvent('U')">U</button>
+				<button class="btn btn-default" onclick="letterClickEvent('V')">V</button>
+				<button class="btn btn-default" onclick="letterClickEvent('W')">W</button>
+				<button class="btn btn-default" onclick="letterClickEvent('X')">X</button>
+				<button class="btn btn-default" onclick="letterClickEvent('Y')">Y</button>
+				<button class="btn btn-default" onclick="letterClickEvent('Z')">Z</button>
 			</div>
-			<div class="list" onclick="rightSideEvent(neighborhoods[0])">
-				<div class="neighborhoodAll">
-					<div class ="lowDown">
-						<h4> Alviso </h4>
-						<p> A quick description of the neigborhood or something.  </p>
-					</div>
+			<div id="neighborhoodSection"></div>
+			<div id="neighborhoodDefaultSection"></div>
+			<div class="neighborhoodAll" onclick="rightSideEvent(neighborhoods[0])">
+				<span class="lowDown">
+					<h4> Almaden Community Association </h4>
+					<p> A quick description of the neigborhood.  </p>
+				</span>
 
-					<div class="locationBox">
-						<h5> Location: </h5>
-						<p> 200 E Santa Clara St, San Jose, CA 95113 </p>
-					</div>
-
-				</div>
-			</div>
-
-			<div class="list" onclick="rightSideEvent(neighborhoods[1])">
-				<div class="neighborhoodAll">
-					<div class ="lowDown">
-						<h4> Alum Rock </h4>
-						<p> A quick description of Alum Rock Park.  </p>
-					</div>
-				
-					<div class="locationBox">
-						<h5> Location: </h5>
-						<p> 123 Seasame Street, California </p>
-					</div>
-
-				</div>
-			</div>
-
-			<div class="list" onclick="rightSideEvent(neighborhoods[2])">
-				<div class="neighborhoodAll">
-					<div class ="lowDown">
-						<h4> North Side </h4>
-						<p> A quick description of North Side  </p>
-					</div>
-				
-					<div class="locationBox">
-						<h5> Location: </h5>
-						<p> 420 Coelho St, Milpitas California </p>
-					</div>
-
-				</div>
+				<span class="locationBox">
+					<h5> Location: </h5>
+					<p> 5789 Via Monte Dr #C, San Jose, CA 95118 </p>
+				</span>
 			</div>
 
 		</div>
