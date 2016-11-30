@@ -8,119 +8,101 @@ body{
 ul{
 	list-style: none;
 }
+
 #header{
 	background-color:#333E4B;
-	width:100%;
-	height:85px;
-
+	width: 100%;
+	height: 85px;
 }
 
 #logo{
-	float:left;
+	float: left;
 	text-align: center;
-	color:white;
+	color: white;
 	background-color: #FFB200;
-	height:85px;
-	width:200px;
+	height: 85px;
+	width: 200px;
 }
 
 #logo > #desktopLogo >h1{
-	color:white;
+	color: white;
 	font-family: arial;
 	font-size: 18px;
 	line-height: 50px;
 }
 
 #logo > #mobileLogo {
-	display:none;
+	display: none;
 }
 
 #mobileLogo:hover{
-	cursor:hand;
+	cursor: hand;
 }
 
 #mobileL{
-	font-size:30px;
+	font-size: 30px;
 	line-height: 70px;
 }
 
 #searchbar{
-	float:left;
+	float: left;
 	padding: 25px;
-	padding-bottom:0px;
+	padding-bottom: 0px;
 }
 
 #searchIcon{
 	color: #C0C2C5;
 	position: absolute;
-	top:38px;
-	left:235px;
+	top: 38px;
+	left: 235px;
 }
 
 #search{
 	background: #2C343E;
-	padding:10px;
-	padding-left:30px;
+	padding: 10px;
+	padding-left: 30px;
 	font-size: 14px;
 	font-style: italic;
 	font-weight: 300;
 	color: #848484;
-	height:40px;
+	height: 40px;
 	width: 300px;
-	border:0px;
+	border: 0px;
 	border-radius: 5px;
 }
 
 #nav{
-	float:right;
+	float: right;
 	display: flex;
 	flex-direction: row;
 	display: -webkit-flex;
 	-webkit-justify-content: space-around;
 	justify-content: space-around;
 	background-color: #29313C;
-	height:85px;
-	width:350px;
+	height: 85px;
 	line-height: 90px;
-
 }
 
 .navLinks a{
-	color:white;
+	color: white;
 	font-size: 12px;
 	color: #BABABA;
+}
 
+#content {
+	padding: 0;
 }
 
 #map{
 	float: left;
 	background-color: #29313C;
-	width:calc(100% - 350px);
-	height:400px;
-	margin-bottom: 40px
+	height: 400px;
+	margin-bottom: 40px;
+	padding: 0;
 }
-
-
-
-
-
-#menu { 	
-	position:fixed; z-index:1; bottom:0; right:0;
-    width:10em; height:10em; background-color:white;
-            border-radius: 2%; 
-            border:rgba(100,100,100,.75) solid 1px;
-            display:inline-block; 
-            line-height:1.5em;
-            margin:0 3em 5em 0; 
-            padding:.5em;
-}
-
 
 #rightSide{
-	background-color: white;
-	width:350px;
-	height:100%;
-	float: right;
+	padding: 0;
 }
 
 .socialMedia > ul{
@@ -131,7 +113,6 @@ ul{
 .neighborhood{
 	padding: 10px 50px 0px 50px;
 }
-
 
 .neighborhood > h3{
 	text-align: center;
@@ -145,7 +126,7 @@ ul{
 	font-size: 14px;
 	color: #616161;
 	line-height: 24px;
-	margin-bottom:20px;
+	margin-bottom: 20px;
 }
 
 .neighborhood > h4{
@@ -168,11 +149,11 @@ ul{
 }
 
 .neighborhood > #thing1 > .websiteButton{
-	height:40px;
-	width:200px;
+	height: 40px;
+	width: 200px;
 	text-align: center; 
 	background: #41BCEF;
-	border:0px;
+	border: 0px;
 	border-radius: 5px;
 	font-size: 12px;
 	color: #FFFFFF;
@@ -189,7 +170,6 @@ ul{
 	font-size: 18px;
 	color: #676767;
 	line-height: 22px;
-
 }
 
 #neighborhoodList > .list {
@@ -197,8 +177,7 @@ ul{
 }
 
 .neighborhoodAll{
-	width:calc(100% - 350px);
-	height:100px;
+	height: 100px;
 	background-color: white;
 	padding:25px;
 	display: -webkit-flex;
@@ -213,15 +192,14 @@ ul{
 
 .neighborhoodAll:hover{
 	background-color: #F8F8F8;
-	cursor:hand;
+	cursor: hand;
 }
 
 .neighborhoodAll > .lowDown{
-	width:300px;
+	width: 300px;
 }
 
 .lowDown > h4 {
-
 	font-size: 16px;
 	color: #41BCEF;
 	line-height: 5px;
@@ -237,6 +215,7 @@ ul{
 .socialMedia{
 	padding-top:10px;
 }
+
 .socialMedia > ul{
 	list-style: none;
 }
@@ -258,116 +237,111 @@ ul{
 	color: #6D6D6D;
 	line-height: 11px;
 	padding-right: 20px;
-
 }
 
 #mobileMenu{
-	display:none;
-	position:absolute;
+	display: none;
+	position: absolute;
 	z-index: 1;
-	width:100%;
-	height:100%;
+	width: 100%;
+	height: 100%;
 	background-color: rgba(0, 0, 0, 0.8);
-	color:white;
+	color: white;
 	padding: 12px;
 }
 
 #mobileMenu > ul > li {
-	font-size:24px;
+	font-size: 24px;
 	line-height: 24px;
 	background-color: black;
-	padding:12px;
-	margin-bottom:5px;
-	color:white;
+	padding: 12px;
+	margin-bottom: 5px;
+	color: white;
 }
 
-
 #x{
-	font-size:24px;
+	font-size: 24px;
 	text-align: right;
 }
 
 .neighborhood{
-	display:none;
+	display: none;
 }
 
 .directions{
-	width:100%;
+	width: 100%;
 	margin: 0 auto;
-	padding:20px;
+	padding: 20px;
 }
 
 .directions > h2 {
-	font-family:'Lato', sans-serif;
-	font-size:20px;
+	font-family: 'Lato', sans-serif;
+	font-size: 20px;
 	color: gray;
 	text-align: center;
 	margin-bottom: 40px;
 }
 
 .directions > ul > li > p{
-	color:#838383;
+	color: #838383;
 }
 
 .directions > ul > li{
-	margin-bottom:30px;
+	margin-bottom: 30px;
 }
 .direction-icons{
-	float:left;
-	margin-right:20px;
+	float: left;
+	margin-right: 20px;
 	color: #41BCEF;
 }
 
 
 @media only screen and (max-width: 900px) {
-    body {
-        background:url();
-    }
+  body {
+    background: url();
+  }
 
-    #rightSide, #nav{
-    	display:none;
-    }
+  #rightSide, #nav{
+  	display: none;
+  }
 
-    #map{
-    	width:100%;
-    }
+  #map{
+  	width: 100%;
+  }
 
-    #logo > #desktopLogo{
-    	display:none;
-    }
+  #logo > #desktopLogo{
+  	display: none;
+  }
 
-    #logo{
-    	width:75px;
-    }
-    #logo > #mobileLogo{
+  #logo{
+  	width: 75px;
+  }
 
-		display:block;
+  #logo > #mobileLogo{
+		display: block;
 	}
 
-    #searchIcon{
+  #searchIcon{
 		color: #C0C2C5;
 		position: absolute;
-		top:28px;
-		left:100px;
+		top: 28px;
+		left: 100px;
 	}	
 
  	#searchBar{
  		padding: 15px;
  	}
 
-    #header, #logo{
-    	height:70px;
-    }
+  #header, #logo{
+  	height: 70px;
+  }
 
-    #search{
-    	width:200px;
-    }
+  #search{
+  	width: 200px;
+  }
 
-    .neighborhoodAll{
-    	width:100%;
-    }
-
-
-}
+  .neighborhoodAll{
+  	width: 100%;
+  }
 }
 

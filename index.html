@@ -9,56 +9,55 @@
 	<link href='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.css' rel='stylesheet' />
 	<script src="http://d3js.org/d3.v3.min.js"></script>
 	<script src="http://d3js.org/queue.v1.min.js"></script>
-	<link rel = "stylesheet" href = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-	<link rel = "stylesheet" href = "css/main.css">
-	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link href="css/main.css" rel="stylesheet" >
+	<link href="css/font-awesome.min.css" rel="stylesheet" >
 	<title> Neighborhood Associations </title>
 
 
 </head>
 <body>
-	<div id = "mobileMenu">
-		<div id = "x" onclick = "closeMenu()">
+	<div id="mobileMenu">
+		<div id="x" onclick="closeMenu()">
 			Close <i class="fa fa-times" aria-hidden="true" ></i>
 		</div>
 		<ul>
-			<li > <a href = "#">About Us</a> </li>
-			<li> <a href = "#">Contribute</a> </li>
-			<li> <a href = "#">Contact</a> </li>
+			<li > <a href="#">About Us</a> </li>
+			<li> <a href="#">Contribute</a> </li>
+			<li> <a href="#">Contact</a> </li>
 		</ul>
 	</div>
-	<div id = "header">
-		<div id = "logo">
-			<span id = "desktopLogo"> <h1>Neighborhoods</h1> </span> 
-			<span id = "mobileLogo" onclick = "toggleMobileMenu()"> <i class="fa fa-bars" id = "mobileL" aria-hidden="true"></i> </span>
+
+	<div id="header">
+		<div id="logo">
+			<span id="desktopLogo"> <h1>Neighborhoods</h1> </span> 
+			<span id="mobileLogo" onclick="toggleMobileMenu()"> <i class="fa fa-bars" id="mobileL" aria-hidden="true"></i> </span>
 		</div>
 
-		<div id = "searchbar">
-			<i id = "searchIcon" class="fa fa-search" aria-hidden="true"></i>
-			<input id = "search" type = "text" placeholder= "search for neighborhoods">
+		<div id="searchbar">
+			<i id="searchIcon" class="fa fa-search" aria-hidden="true"></i>
+			<input id="search" type="text" placeholder= "search for neighborhoods">
 		</div>
-		<div id = "nav">
-			<div class = "navLinks">
-				<a href = "#">About Us</a>
+		<div class="col-md-3 pull-right" id="nav">
+			<div class="navLinks">
+				<a href="#">About Us</a>
 			</div>
-			<div class = "navLinks">
-				<a href = "#">Contribute</a>
+			<div class="navLinks">
+				<a href="#">Contribute</a>
 			</div>
-			<div class = "navLinks">
-				<a href = "#">Contact</a>
+			<div class="navLinks">
+				<a href="#">Contact</a>
 			</div>
 		</div>
 	</div>
 
-	<div id = "content">
+	<div class="col-md-12" id="content">
 
-		<div id = "map">
+		<div class="col-md-9" id="map"></div>
 
-		</div>
-
-		<div id = "rightSide">
-			<div id = "directions" class = "directions">
+		<div class="col-md-3 pull-right" id="rightSide">
+			<div id="directions" class="directions">
 				<h2>Finding Your Neighborhood Association</h2>
 				<ul>
 					<li>
@@ -76,14 +75,13 @@
 						<p>Find and click on neigborhood assocation on map </p>
 					</li>
 				</ul>
-
-
 			</div>
-			<div id = "neighborhood" class = "neighborhood">
 
-				<h3 id = "city"> Willow Glenn </h3>
+			<div class="neighborhood" id="neighborhood">
 
-				<div id = "description" class = "description">
+				<h3 id="city"> Willow Glenn </h3>
+
+				<div class="description" id="description">
 					A quick summary about following neigborhood. 
 				</div>
 
@@ -92,46 +90,70 @@
 				<p> <strong> Wednesday: </strong> 6PM - 7PM </p>
 
 				<h4> Location: </h4>
-				<p id = "location"> 200 E Santa Clara St, San Jose, CA 95113 </p>
+				<p id="location"> 200 E Santa Clara St, San Jose, CA 95113 </p>
 
 				<h4> Contact: </h4>
-				<p> <span id = "person">Thomas Nguyen</span>: <span id = "phone"> (408) 893-2935</span> </p>
+				<p> <span id="person">Thomas Nguyen</span>: <span id="phone"> (408) 893-2935</span> </p>
 
-				<div class = "socialMedia">
+				<div class="socialMedia">
 
 					<ul>
 						<li>
 							<i class="fa fa-twitter-square" aria-hidden="true"></i> 
-							<a href = "#"> Twitter</a>
+							<a href="#"> Twitter</a>
 						</li>
 						<li>
 							<i class="fa fa-facebook-square" aria-hidden="true"></i> 
-							<a href = "#"> Facebook</a>
+							<a href="#"> Facebook</a>
 						</li>
 					</ul>
 				</div>
 
-				<div id = "thing1">
-					<button class = "websiteButton"> View Website </button>
+				<div id="thing1">
+					<button class="websiteButton"> View Website </button>
 				</div>
-
-
 
 			</div>
 		</div>	
 
-		<div id = "neighborhoodList">
+		<div class="col-md-9" id="neighborhoodList">
 			<h3> View all neighborhoods: </h3>
-
-			<div class = "list" onclick = "rightSideEvent(neighborhoods[0])">
-				<div class = "neighborhoodAll">
-					<div class  = "lowDown">
+			<div>
+				<button class="btn btn-default">A</button>
+				<button class="btn btn-default">B</button>
+				<button class="btn btn-default">C</button>
+				<button class="btn btn-default">D</button>
+				<button class="btn btn-default">E</button>
+				<button class="btn btn-default">F</button>
+				<button class="btn btn-default">G</button>
+				<button class="btn btn-default">H</button>
+				<button class="btn btn-default">I</button>
+				<button class="btn btn-default">J</button>
+				<button class="btn btn-default">K</button>
+				<button class="btn btn-default">L</button>
+				<button class="btn btn-default">M</button>
+				<button class="btn btn-default">N</button>
+				<button class="btn btn-default">O</button>
+				<button class="btn btn-default">P</button>
+				<button class="btn btn-default">Q</button>
+				<button class="btn btn-default">R</button>
+				<button class="btn btn-default">S</button>
+				<button class="btn btn-default">T</button>
+				<button class="btn btn-default">U</button>
+				<button class="btn btn-default">V</button>
+				<button class="btn btn-default">W</button>
+				<button class="btn btn-default">X</button>
+				<button class="btn btn-default">Y</button>
+				<button class="btn btn-default">Z</button>
+			</div>
+			<div class="list" onclick="rightSideEvent(neighborhoods[0])">
+				<div class="neighborhoodAll">
+					<div class ="lowDown">
 						<h4> Alviso </h4>
 						<p> A quick description of the neigborhood or something.  </p>
 					</div>
-				
 
-					<div class = "locationBox">
+					<div class="locationBox">
 						<h5> Location: </h5>
 						<p> 200 E Santa Clara St, San Jose, CA 95113 </p>
 					</div>
@@ -139,15 +161,14 @@
 				</div>
 			</div>
 
-			<div class = "list" onclick = "rightSideEvent(neighborhoods[1])">
-				<div class = "neighborhoodAll">
-					<div class  = "lowDown">
+			<div class="list" onclick="rightSideEvent(neighborhoods[1])">
+				<div class="neighborhoodAll">
+					<div class ="lowDown">
 						<h4> Alum Rock </h4>
 						<p> A quick description of Alum Rock Park.  </p>
 					</div>
 				
-
-					<div class = "locationBox">
+					<div class="locationBox">
 						<h5> Location: </h5>
 						<p> 123 Seasame Street, California </p>
 					</div>
@@ -155,15 +176,14 @@
 				</div>
 			</div>
 
-			<div class = "list" onclick = "rightSideEvent(neighborhoods[2])">
-				<div class = "neighborhoodAll">
-					<div class  = "lowDown">
+			<div class="list" onclick="rightSideEvent(neighborhoods[2])">
+				<div class="neighborhoodAll">
+					<div class ="lowDown">
 						<h4> North Side </h4>
 						<p> A quick description of North Side  </p>
 					</div>
 				
-
-					<div class = "locationBox">
+					<div class="locationBox">
 						<h5> Location: </h5>
 						<p> 420 Coelho St, Milpitas California </p>
 					</div>
@@ -171,17 +191,12 @@
 				</div>
 			</div>
 
-
-
 		</div>
-
-
-
 
 	</div>
 
-	<script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	<script src = "js/app.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="js/app.js"></script>
 
 </body>
 </html>
