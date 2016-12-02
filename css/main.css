@@ -1,0 +1,336 @@
+input[type='text'],
+input[type='number'],
+textarea {
+  font-size: 16px;
+}
+
+
+*{
+  margin:0 auto;
+  font-family:arial;
+}
+
+body{
+  background-color:#F0F0F0;
+  
+}
+
+/*** ------- HEADER -------  ***/
+
+header{
+  background-color: #333E4B;
+  width:100%;
+  height:85px;
+}
+
+.logo{
+  float:left;
+  width:200px;
+  height:100%;
+  background-color: #FFB200;
+  text-align:center;
+}
+
+.logo-desktop{
+  color:white;
+	font-size: 18px;
+	line-height: 85px;
+}
+
+.logo-mobile{
+  display:none;
+}
+
+.hamburger-menu{
+  line-height:70px;
+  color:white;
+}
+
+
+/*** ------- SEARCH -------  ***/
+
+.search{
+  float:left;
+  position:relative;
+  margin:20px;
+  margin-bottom:0px;
+  margin-right:0px;
+  z-index:5;
+}
+
+.search > .fa-search {
+  position:absolute;
+  z-index:1;
+  left:12px;
+  bottom:14px;
+  color:white;
+}
+
+.search-input{
+  background: #191e25;
+  padding: 10px;
+  padding-left: 35px;
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 300;
+  color: white;
+  height: 25px;
+  width: 145px;
+  border: 0px;
+  border-radius: 5px;
+  z-index:5;
+}
+
+.search-input:focus{
+  width: 380px;
+  transition:0.2s;
+}
+
+/*** ------- NAV -------  ***/
+
+nav{
+  width:350px;
+  height:100%;
+  background-color:#29313C;
+  float:right;
+}
+
+ul {
+  margin:auto;
+}
+li a{
+  color:white;
+  padding:15px;
+  text-decoration:none;
+  line-height:85px;
+  font-weight:600;
+  color: #BABABA;
+  font-size:13px;
+}
+
+li a:hover{
+  color:white;
+}
+ul > li{
+  display:inline;
+}
+
+/*** ------- MAP & LIST -------  ***/
+
+content{
+  margin:0px;
+  padding:0px;
+}
+
+.directory {
+  width:calc(100% - 350px);
+  height:calc(100vh - 85px);
+  float:left;
+}
+
+#map{
+  width:100%;
+  height:100%;
+}
+
+.list{
+  width:100%;
+  height:100%;
+  background-color:#F0F0F0;
+  text-align:center;
+  position:relative;
+  display:none;
+  -webkit-animation-duration: 0.8s;
+  -webkit-animation-delay: 0s;
+  -webkit-animation-iteration-count: 1;
+}
+
+.list > h1 {
+  width:100%;
+  font-size:22px;
+  color:#676767;
+  text-align:center;
+  position:absolute;
+  top:35px;
+}
+
+.fa-times {
+  position:relative;
+  top:5px;
+  color:red;
+}
+
+.exit{
+  position:absolute;
+  top:55px;
+  right:55px;
+}
+
+.fa-times:hover{
+  cursor:pointer;
+}
+
+.list-flexbox{
+  position:relative;
+  top:85px;
+  width:90%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap:wrap;
+  flex-wrap: wrap
+  flex-direction:row;
+  webkit-justify-content:space-around;
+  justify-content:space-around;
+}
+
+.list-flexItem{
+  margin:15px;
+  width:200px;
+  background: #FFFFFF;
+	box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.07);
+	border-radius: 5px;
+  padding:12px;
+  text-align:left;
+  border:0px;
+  border-style: solid;
+  border-left: thick solid #41BCEF;
+}
+
+.list-flexItem:hover{
+  cursor:pointer;
+}
+
+
+.list-org{
+    font-size: 16px;
+    font-weight:400;
+    color: #41BCEF;
+    line-height:20px;
+}
+
+.list-address{
+  padding-top:5px;
+  font-size: 12px;
+  font-weight: 300;
+  color: #838383;
+}
+
+.list-flexItem_active{
+  background-color:green;
+}
+
+
+/*** ------- INFO -------  ***/
+
+.info {
+	width:350px;
+	height:calc(100vh - 85px);
+  float:right;
+  background-color: #333E4B;
+}
+
+.info-content{
+  text-align:center;
+  padding:30px;
+  padding-top:35px;
+}
+
+.info-description{
+  color:gray;
+  font-size:14px;
+  margin-top:-12px;
+  text-align:left;
+  margin-bottom:18px;
+}
+
+.direction-icons{
+  color: #41BCEF;
+  float:left;
+  margin-left:-25px;
+  margin-top:5px;
+}
+
+
+h2{
+  color:#41BCEF;
+  font-size: 20px;
+  margin-bottom:30px;
+}
+
+.content-ul_p {
+  color:#929292;
+  width:210px;
+  text-align:left;
+  font-size:14px;
+  padding-left:20px;
+  margin-bottom:50px;
+}
+
+.content-p{
+  color:white;
+  margin-bottom:10px;
+}
+
+.info-property{
+  text-align:left;
+  color:white;
+  padding:10px;
+  padding-left:20px;
+  line-height:21px;
+}
+
+.info-button{
+  margin-top:20px;
+  background-color:#305c99;
+  padding:10px;
+  font-size:14px;
+  color:white;
+  border:0px;
+}
+
+.info-button:hover{
+  background-color:#3d74c2;
+  transition:0.2s;
+  cursor:pointer;
+}
+
+
+@media (max-width: 1015px) {
+  .info, #map, nav, .logo-desktop{
+    display:none;
+  }
+  .logo-mobile{
+    display:block;
+  }
+  .list{
+    display:block;
+  }
+  .exit{
+    display:none;
+  }
+  header{
+    height:70px;
+  }
+  .logo{
+    width:70px;
+  }
+  .directory{
+    margin: 0 auto;
+    display:block;
+    width:100%;
+  }
+  .search{
+    margin:15px;
+    width:calc(100% - 150px);
+  }
+  .search-input, .search-input:focus{
+    width:100%;
+  }
+  
+
+}
